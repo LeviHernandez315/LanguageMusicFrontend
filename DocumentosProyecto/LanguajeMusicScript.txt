@@ -1,10 +1,19 @@
+-- Tabla Tarjetas
+CREATE TABLE Tarjetas (
+    idTarjeta INT AUTO_INCREMENT PRIMARY KEY,
+    NumTarjeta VARCHAR(16),
+    CVV VARCHAR(3)
+);
+
 -- Tabla Usuario
 CREATE TABLE Usuario (
     idUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    idTarjeta INT,
     nombre VARCHAR(255),
     apellido VARCHAR(255),
     email VARCHAR(255),
-    password VARCHAR(255)
+    password VARCHAR(255),
+    FOREIGN KEY (idTarjeta) REFERENCES Tarjetas(idTarjeta)
 );
 
 -- Tabla TipoMembresia
@@ -36,14 +45,6 @@ CREATE TABLE Recibo (
     FOREIGN KEY (idMembresia) REFERENCES Membresia(idMembresia)
 );
 
--- Tabla Tarjetas
-CREATE TABLE Tarjetas (
-    idTarjeta INT AUTO_INCREMENT PRIMARY KEY,
-    idUsuario INT,
-    NumTarjeta VARCHAR(16),
-    CVV VARCHAR(3),
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
-);
 
 -- Tabla Artistas
 CREATE TABLE Artistas (
@@ -55,7 +56,7 @@ CREATE TABLE Artistas (
 CREATE TABLE Albumes (
     idAlbum INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255),
-    año INT,
+    anio INT,
     idArtista INT,
     FOREIGN KEY (idArtista) REFERENCES Artistas(idArtista)
 );
