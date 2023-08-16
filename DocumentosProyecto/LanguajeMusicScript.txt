@@ -20,6 +20,8 @@ CREATE TABLE Membresia (
     idUsuario INT,
     idTipoMembresia INT,
     Activa BOOLEAN,
+    fechaInicio DATE,
+    fechaVencimiento DATE,
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
     FOREIGN KEY (idTipoMembresia) REFERENCES TipoMembresia(idTipoMembresia)
 );
@@ -71,7 +73,7 @@ CREATE TABLE Playlist (
 CREATE TABLE Canciones (
     idCancion INT AUTO_INCREMENT PRIMARY KEY,
     NombreCancion VARCHAR(255),
-    Duracion TIME,
+    Duracion INT,
     URL VARCHAR(255),
     idAlbum INT,
     idArtista INT,
