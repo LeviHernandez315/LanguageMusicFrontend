@@ -7,18 +7,21 @@ use Illuminate\Support\Facades\Http;
 
 class UsuarioController extends Controller
 {
-    public function crear(Request $request)
+    public function crearUsuario(Request $request)
     {
-        $response = Http::post('http://localhost:8080/api', [
-            '' => $request->input('nombre'),
-            '' => $request->input('apellido'),
-            '' => $request->input('email'),
-            '' => $request->input('password'),
-            '' => $request->input('numeroTarjeta'),
-            '' => $request->input('cvv')
-            // '' => $request->input('')
-        ]);
+        $responseTipoMembresia = Http::get('http://localhost:8080/api/tipomeb/obtener');
+        $tipoMembresia = $responseTipoMembresia->json();
+        
+        
 
-        return redirect()->route('artistas.crear');
+        /*
+
+        $response = Http::post('http://localhost:8080/api/usuarios/guardar');
+        $data = $response->json();
+        */
+
+        //
+
+        return view('sinup', compact('tipoMembresia'));
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusicaController;
+use App\Http\Controllers\UsuarioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,12 +13,28 @@ use App\Http\Controllers\MusicaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//Pagina Principal
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('login');
+})->name('login.index');
 
+//Pagina Crear Usuario/
+/*
+Route::get('/sinup', function () {
+    return view('sinup');
+})->name('sinup.index');
+*/
 
+Route::get('/sinup', [UsuarioController::class, 'crearUsuario'])->name('usuario.crear');
+
+/*
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login.index');
+*/
+
+//Rutas Para la vista de la musica
 Route::get('/musica', [MusicaController::class, 'index'])->name('musica.index');
 Route::post('/usuario/crear');
 
@@ -25,11 +42,3 @@ Route::post('/usuario/crear');
 Route::get('/sam', function () {
     return view('samuel');
 });
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login.index');
-
-Route::get('/sinup', function () {
-    return view('sinup');
-})->name('sinup.index');;

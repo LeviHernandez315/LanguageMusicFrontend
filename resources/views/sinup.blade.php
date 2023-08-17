@@ -17,8 +17,11 @@
                 <input id="password" name="password" type="password" placeholder="Password" class="signup-input">
                 <input id="confPassword" name="confPassword" type="password" placeholder="Confirm Password" class="signup-input">
                 <select id="" name="" class="signup-input" name="tipo-de-membresia">
-                <option   class="signup-input" value="usa">Premium</option>
-                <option  class="signup-input" value="canada">black</option>
+                @foreach ($tipoMembresia as $tipo)
+                    
+                    <option   class="signup-input" value="usa" data-id="{{$tipo['idTipoMembresia']}}">{{$tipo['nombre']}}</option>
+
+                @endforeach
                 <!-- Agrega más opciones aquí -->
                 </select>
                
@@ -48,6 +51,9 @@
                 
                 <button type="submit" class="signup-button">Sign Up</button>
             </form>
+
+            
+
             <p class="login-link">Ya tiene una cuenta? <a href="{{route('login.index')}}">Log In</a></p>
         </div>
     </div>
