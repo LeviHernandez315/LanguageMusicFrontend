@@ -10,19 +10,19 @@
     <div class="signup-container">
         <div class="signup-box">
             <h1 class="signup-heading">Crea una nueva cuenta</h1>
-            <form class="signup-form">
-                <input type="text" placeholder="Email" class="signup-input">
-                <input type="password" placeholder="Password" class="signup-input">
-                <input type="password" placeholder="Confirm Password" class="signup-input">
-                <input type="text" placeholder="nombre" class="signup-input">
-                <input type="text" placeholder="apellido" class="signup-input">
-                <select  class="signup-input" name="tipo-de-membresia">
+            <form method="POST" action="" class="signup-form">
+                <input id="nombre" name="nombre" type="text" placeholder="nombre" class="signup-input">
+                <input id="apellido" name="apellido" type="text" placeholder="apellido" class="signup-input">
+                <input id="email" name="email" type="text" placeholder="Email" class="signup-input">
+                <input id="password" name="password" type="password" placeholder="Password" class="signup-input">
+                <input id="confPassword" name="confPassword" type="password" placeholder="Confirm Password" class="signup-input">
+                <select id="" name="" class="signup-input" name="tipo-de-membresia">
                 <option   class="signup-input" value="usa">Premium</option>
                 <option  class="signup-input" value="canada">black</option>
                 <!-- Agrega más opciones aquí -->
                 </select>
                
-                <input type="text" placeholder="escriba numero de tarjeta" class="signup-input">
+                <input id="numeroTarjeta" name="numeroTarjeta" type="text" placeholder="escriba numero de tarjeta" class="signup-input">
                 <div class="contenedor-fecha">
 
                 
@@ -39,7 +39,7 @@
 
                     <div class="">
                        
-                        <input type="text" class="signup-input" id="cvv" placeholder="CVV">
+                        <input  type="text" class="signup-input" id="cvv" name="cvv" placeholder="CVV">
                     </div>
 
 

@@ -16,7 +16,12 @@ use App\Http\Controllers\MusicaController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Route::get('/musica', [MusicaController::class, 'index'])->name('musica.index');
+Route::post('/usuario/crear');
+
+
 Route::get('/sam', function () {
     return view('samuel');
 });
