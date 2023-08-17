@@ -20,3 +20,11 @@ Route::get('/musica', [MusicaController::class, 'index'])->name('musica.index');
 Route::get('/sam', function () {
     return view('samuel');
 });
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login.index');
+
+Route::get('/sinup', function () {
+    return view('sinup');
+})->name('sinup.index');;

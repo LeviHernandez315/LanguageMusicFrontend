@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Spotify</title>
-  <link rel="icon" href="{{ asset('img/cover1.jpg') }}" >+
+  <link rel="icon" href="{{ asset('img/cover1.jpg') }}" >
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/all.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+
+ 
 </head>
 <body>
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -17,7 +20,7 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-usuarios">Cambiar usuario</a>
+        <a class="nav-link" href="{{route('login.index')}}">Cerrar Sesion</a>
       </li>
     </ul>
   </nav>
@@ -59,6 +62,23 @@
       </nav>
   
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div id="menutop10" class="col-8" style="display:">
+          Top 10 canciones más escuchadas
+        
+          <div class="row song-item">
+                  <div class="col-1"><i class="fas fa-play"></i></div>
+                  <div class="col-10">
+                    <div class="song-title">Cancion</div>
+                    <div class="song-description">Artista - Album</div>
+                  </div>
+                  <div class="col-1">
+                      <span>3:56</span>
+                      <button onclick="agregarCancion(1)" class="btn btn-outline-success btn-sm" title="Agregar a playlist"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+
+</div>
+
         <div id="vista-playlist" style="display: none">
           <section class="container-fluid">
             <div class="row">
@@ -67,13 +87,13 @@
                 <div class="cover-image">
                     <i class="fas fa-music fa-9x"></i>
                 </div>
-                <button class="btn btn-success"type="button">Play</button>
+                <button   onclick="mostrarModal()"  class="btn btn-success"type="button">Play</button>
               </div>
               <div class="col-8">
                 
                 <!--Item 1 -->
                 <div class="row song-item">
-                  <div class="col-1"><i class="fas fa-play"></i></div>
+                  <div class="col-1"><i  class="fas fa-play"></i></div>
                   <div class="col-10">
                     <div class="song-title">Cancion</div>
                     <div class="song-description">Artista - Album</div>
@@ -174,7 +194,7 @@
                 <div class="cover-image" style="background-image:url(img/cover1.jpg);">
                 </div><br>
                 <h5 class="text-muted">Album 1</h5>
-                <button class="btn btn-success"type="button">Play</button>
+                <button  class="btn btn-success"type="button">Play</button>
               </div>
               <div class="col-8">
                 
@@ -287,7 +307,7 @@
                   <div class="cover-image" style="background-image:url(img/cover2.jpg);">
                   </div>
                   <h5 class="text-muted">Album 2</h5>
-                  <button class="btn btn-success"type="button">Play</button>
+                  <button  class="btn btn-success"type="button">Play</button>
                 </div>
                 <div class="col-8">
                   
@@ -305,7 +325,7 @@
                   </div>
     
                   <div class="row song-item">
-                    <div class="col-1"><i class="fas fa-play"></i></div>
+                    <div class="col-1"><i   class="fas fa-play"></i></div>
                     <div class="col-10">
                       <div class="song-title">Cancion</div>
                       <div class="song-description">Artista - Album</div>
@@ -427,40 +447,21 @@
       </div>
     </div>
   </div>
-
-
-  <!--Modal Usuarios-->
-  <div class="modal fade" id="modal-usuarios" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Cambiar usuario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+ 
+    <!-- Ventana modal -->
+    <div id="mimodall" class="modalclas">
+        <div class="modal-content1">
+            <span onclick="cerrarModal()" style="float: right; cursor: pointer;">&times;</span>
+            <h3>Reproduciendo Canción</h3>
+            <p>Simulación de reproducción de canción aquí...</p>
         </div>
-        <div class="modal-body">
-          Seleccione un usuario
-          <select class="form-control">
-            <option value="1">Usuario 1</option>
-            <option value="2">Usuario 2</option>
-            <option value="3">Usuario 3</option>
-          </select>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-success">Seleccionar usuario</button>
-        </div>
-      </div>
     </div>
-  </div>
-
-
-
-  <script src="/js/jquery-3.4.1.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/all.js"></script>
-  <script src="/js/controlador.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+ 
+  <script src="/js/controlador.js"></script> 
 </body>
 </html>
