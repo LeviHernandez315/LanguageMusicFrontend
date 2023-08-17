@@ -42,3 +42,5 @@ Route::post('/usuario/crear');
 Route::get('/sam', function () {
     return view('samuel');
 });
+
+Route::post('/validar/campos', [UsuarioController::class, 'validarCampos'])->name('validar.campos');

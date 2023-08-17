@@ -24,4 +24,20 @@ class UsuarioController extends Controller
 
         return view('sinup', compact('tipoMembresia'));
     }
+
+    public function validarCampos(Request $request){
+        
+        $nombre = $request->input('nombre');
+        $apellido = $request->input('apellido');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $confPassword = $request->input('confPassword');
+        
+        if(!$request->filled('nombre')){
+            return redirect()->route('usuario.crear');
+        }
+        else{
+            return view('musica');
+        }
+    }
 }
