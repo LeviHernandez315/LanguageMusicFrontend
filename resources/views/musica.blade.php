@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Spotify</title>
+  <title>LanguageMusic</title>
   <link rel="icon" href="{{ asset('img/cover1.jpg') }}" >
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/all.css') }}">
@@ -12,11 +12,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
- 
+  <script src="https://kit.fontawesome.com/b9da7bb172.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img src="{{ asset('img/spotify-white-logo.png') }}" style="width: 180px;"></a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+      {{-- <img src="{{ asset('img/spotify-white-logo.png') }}" style="width: 180px;"> --}}
+      <i class="fa-solid fa-music"></i>
+      LanguageMusic
+    </a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
@@ -31,17 +35,12 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Artists</span>
+              <span>Artistas</span>
               <a class="d-flex align-items-center text-muted" href="#">
                 <span data-feather="plus-circle"></span>
               </a>
             </h6>
             <li class="nav-item"><div class="nav-link" onclick="verArtista(1)"><i class="fas fa-music"></i> Artista 1</div></li>
-            <li class="nav-item"><div class="nav-link" onclick="verArtista(2)"><i class="fas fa-music"></i> Artista 2</div></li>
-            <li class="nav-item"><div class="nav-link" onclick="verArtista(3)"><i class="fas fa-music"></i> Artista 3</div></li>
-            <li class="nav-item"><div class="nav-link" onclick="verArtista(4)"><i class="fas fa-music"></i> Artista 4</div></li>
-            <li class="nav-item"><div class="nav-link" onclick="verArtista(5)"><i class="fas fa-music"></i> Artista 5</div></li>
-            <li class="nav-item"><div class="nav-link" onclick="verArtista(6)"><i class="fas fa-music"></i> Artista 6</div></li>
           </ul>
   
           <ul class="nav flex-column">
