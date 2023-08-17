@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MusicaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/musica', [MusicaController::class, 'index'])->name('musica.index');
+Route::get('/sam', function () {
+    return view('samuel');
 });
