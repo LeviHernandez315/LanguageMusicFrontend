@@ -46,9 +46,13 @@
           <ul class="nav flex-column">
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Playlists</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
-              </a>
+              {{-- <a class="d-flex align-items-center text-muted" href="#"> --}}
+                <span data-feather="plus-circle">
+                  <button data-bs-toggle="modal" data-bs-target="#modal-agregar-playlist">
+                    <i class="fa-regular fa-square-plus"></i>
+                  </button>
+                </span>
+              {{-- </a> --}}
             </h6>
             <li class="nav-item"><div class="nav-link" onclick="verPlaylist(1)"><i class="fas fa-play"></i> Playlist 1</div></li>
             <li class="nav-item"><div class="nav-link" onclick="verPlaylist(2)"><i class="fas fa-play"></i> Playlist 2</div></li>
@@ -65,18 +69,18 @@
           Top 10 canciones más escuchadas
         
           <div class="row song-item">
-                  <div class="col-1"><i class="fas fa-play"></i></div>
-                  <div class="col-10">
-                    <div class="song-title">Cancion</div>
-                    <div class="song-description">Artista - Album</div>
-                  </div>
-                  <div class="col-1">
-                      <span>3:56</span>
-                      <button onclick="agregarCancion(1)" class="btn btn-outline-success btn-sm" title="Agregar a playlist"><i class="fas fa-plus"></i></button>
-                  </div>
-                </div>
+            <div class="col-1"><i class="fas fa-play"></i></div>
+            <div class="col-10">
+              <div class="song-title">Cancion</div>
+              <div class="song-description">Artista - Album</div>
+            </div>
+            <div class="col-1">
+                <span>3:56</span>
+                <button onclick="agregarCancion(1)" class="btn btn-outline-success btn-sm" title="Agregar a playlist"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
 
-</div>
+          </div>
 
         <div id="vista-playlist" style="display: none">
           <section class="container-fluid">
@@ -454,6 +458,28 @@
             <h3>Reproduciendo Canción</h3>
             <p>Simulación de reproducción de canción aquí...</p>
         </div>
+    </div>
+
+    <!--modal para agregar playlist-->
+    <div class="modal fade" id="modal-agregar-playlist" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Agregue una PlayList</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Nombre: 
+            <input type="text" placeholder="Nombre de la playlist">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-success">Guardar en playlist</button>
+          </div>
+        </div>
+      </div>
     </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

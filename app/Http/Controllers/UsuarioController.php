@@ -33,7 +33,7 @@ class UsuarioController extends Controller
         $password = $request->input('password');
         $confPassword = $request->input('confPassword');
         
-        if(!$request->filled('nombre')){
+        if($password != $confPassword){
             return redirect()->route('usuario.crear');
         }
         else{

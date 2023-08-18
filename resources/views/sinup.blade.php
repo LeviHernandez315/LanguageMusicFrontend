@@ -11,6 +11,7 @@
         <div class="signup-box">
             <h1 class="signup-heading">Crea una nueva cuenta</h1>
             <form method="POST" action="{{route('validar.campos')}}" class="signup-form">
+                @csrf
                 <input id="nombre" name="nombre" type="text" placeholder="nombre" class="signup-input">
                 <input id="apellido" name="apellido" type="text" placeholder="apellido" class="signup-input">
                 <input id="email" name="email" type="text" placeholder="Email" class="signup-input">
