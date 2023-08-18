@@ -19,13 +19,10 @@ Route::get('/', function () {
 })->name('login.index');
 
 //Pagina Crear Usuario/
-/*
-Route::get('/sinup', function () {
-    return view('sinup');
-})->name('sinup.index');
-*/
 
 Route::get('/sinup', [UsuarioController::class, 'crearUsuario'])->name('usuario.crear');
+Route::post('/validar/campos', [UsuarioController::class, 'validarCampos'])->name('validar.campos');
+Route::post('/usuario/guardar', [UsuarioController::class, 'guardarUsuario']) ->name('usuario.guardar');
 
 /*
 
@@ -36,11 +33,9 @@ Route::get('/login', function () {
 
 //Rutas Para la vista de la musica
 Route::get('/musica', [MusicaController::class, 'index'])->name('musica.index');
-Route::post('/usuario/crear');
+
 
 
 Route::get('/sam', function () {
     return view('samuel');
 });
-
-Route::post('/validar/campos', [UsuarioController::class, 'validarCampos'])->name('validar.campos');
