@@ -12,7 +12,7 @@ class UsuarioController extends Controller
         $responseTipoMembresia = Http::get('http://localhost:8080/api/tipomeb/obtener');
         $tipoMembresia = $responseTipoMembresia->json();
         
-        
+        $mensaje = "";
 
         /*
 
@@ -22,7 +22,7 @@ class UsuarioController extends Controller
 
         //
 
-        return view('sinup', compact('tipoMembresia'));
+        return view('sinup', compact('mensaje','tipoMembresia'));
     }
 
     public function validarCampos(Request $request){
