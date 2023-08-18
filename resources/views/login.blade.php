@@ -15,7 +15,7 @@
                 <input type="password" placeholder="Password" class="login-input">
                 <button type="submit"  class="login-button"><a href="{{route('musica.index')}}">Log In</a></button>
             </form>
-            <p class="signup-link">Todavia no tiene cuenta? <a href="{{route('sinup.index')}}">Sign Up</a></p>
+            <p class="signup-link">Todavia no tiene cuenta? <a href="{{route('usuario.crear')}}">Sign Up</a></p>
         </div>
     </div>
 </body>
